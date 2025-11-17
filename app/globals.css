@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Primary colors */
+  --cream-50: #fffbf0;
+  --cream: #fef3c7;
+  --orange: #ea580c;
+  --orange-dark: #d84702;
+  
+  /* Neutrals */
+  --white: #ffffff;
+  --gray-100: #f9f7f5;
+  --gray-200: #f0ebe5;
+  --gray-400: #bbb3a8;
+  --gray-600: #6b6359;
+  --gray-900: #1a1410;
+  
+  --background: var(--cream);
+  --foreground: var(--gray-900);
+  --card: var(--white);
+  --card-foreground: var(--gray-900);
+  --popover: var(--white);
+  --popover-foreground: var(--gray-900);
+  --primary: var(--orange);
+  --primary-foreground: var(--white);
+  --secondary: var(--gray-100);
+  --secondary-foreground: var(--gray-900);
+  --muted: var(--gray-200);
+  --muted-foreground: var(--gray-600);
+  --accent: var(--orange);
+  --accent-foreground: var(--white);
+  --border: var(--gray-200);
+  --input: var(--white);
+  --ring: var(--orange);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: var(--gray-900);
+  --foreground: var(--cream);
+  --card: var(--gray-900);
+  --card-foreground: var(--cream);
+  --popover: var(--gray-900);
+  --popover-foreground: var(--cream);
+  --primary: var(--orange);
+  --primary-foreground: var(--gray-900);
+  --secondary: var(--gray-600);
+  --secondary-foreground: var(--cream);
+  --muted: var(--gray-600);
+  --muted-foreground: var(--gray-400);
+  --accent: var(--orange);
+  --accent-foreground: var(--gray-900);
+  --border: var(--gray-600);
+  --input: var(--gray-600);
+  --ring: var(--orange);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.6s ease-out;
+}
