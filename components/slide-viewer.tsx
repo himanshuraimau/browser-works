@@ -122,7 +122,7 @@ export function SlideViewer({
               </button>
             </div>
             <div className="text-center flex-1">
-              <h2 className="text-lg font-semibold text-foreground">{moduleName}</h2>
+              <h2 className="text-lg font-semibold text-foreground text-primary">{moduleName}</h2>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export function SlideViewer({
       </header>
 
       {/* Slide Content */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
         {animationId && currentSlide.type !== 'Diagram' && (
           <>
             <TransitionIndicator type={animationId as any} show={true} />

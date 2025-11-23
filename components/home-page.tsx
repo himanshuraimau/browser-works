@@ -2,6 +2,7 @@
 
 import { Module } from '@/lib/course-data'
 import { ModuleCard } from './module-card'
+import { ModeToggle } from './mode-toggle'
 
 interface HomePageProps {
   modules: Module[]
@@ -11,17 +12,22 @@ interface HomePageProps {
 
 export function HomePage({ modules, onModuleSelect, progress }: HomePageProps) {
   const totalSlides = modules.reduce((acc, mod) => acc + mod.slides.length, 0)
-  const completedSlides = Object.values(progress).filter((p) => {
-    const module = modules.find((m) => m.id === Object.keys(progress).indexOf(String(m.id)))
-    return module && p >= module.slides.length - 1
-  }).length
+  const completedSlides = Object.entries(progress).reduce((acc, [moduleId, slideIndex]) => {
+    const module = modules.find(m => m.id === Number(moduleId))
+    if (!module) return acc
+    const viewed = Math.min(slideIndex + 1, module.slides.length)
+    return acc + viewed
+  }, 0)
 
-  const overallProgress = Math.round((completedSlides / modules.length) * 100)
+  const overallProgress = totalSlides > 0 ? Math.round((completedSlides / totalSlides) * 100) : 0
 
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b-4 border-foreground">
+      <header className="border-b-4 border-foreground relative">
+        <div className="absolute top-4 right-4">
+          <ModeToggle />
+        </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
           <div className="animate-slide-down">
             <h1 className="text-5xl sm:text-7xl font-retro text-foreground mb-4">

@@ -5,11 +5,16 @@
 
 :root {
   /* --- Brand Core: Doodle Pad --- */
-  --brand-paper: #FDFDFB;       /* Off-white Paper */
-  --brand-ink: #333333;         /* Dark Ink */
-  --brand-pen-blue: #2563EB;    /* Blue Pen */
-  --brand-highlighter: #FEF08A; /* Yellow Highlighter */
-  --brand-red-pen: #DC2626;     /* Red Pen */
+  --brand-paper: #FDFDFB;
+  /* Off-white Paper */
+  --brand-ink: #333333;
+  /* Dark Ink */
+  --brand-pen-blue: #2563EB;
+  /* Blue Pen */
+  --brand-highlighter: #FEF08A;
+  /* Yellow Highlighter */
+  --brand-red-pen: #DC2626;
+  /* Red Pen */
   /* --- Base Layer --- */
   --background: var(--brand-paper);
   --foreground: var(--brand-ink);
@@ -37,21 +42,26 @@
 
 .dark {
   /* --- Dark Mode: Chalkboard --- */
-  --background: #262626; /* Chalkboard Gray */
-  --foreground: #F5F5F5; /* White Chalk */
+  --background: #262626;
+  /* Chalkboard Gray */
+  --foreground: #F5F5F5;
+  /* White Chalk */
   --card: rgba(64, 64, 64, 0.8);
   --card-foreground: #F5F5F5;
   --popover: #404040;
   --popover-foreground: #F5F5F5;
-  --primary: #60A5FA; /* Blue Chalk */
+  --primary: #60A5FA;
+  /* Blue Chalk */
   --primary-foreground: #171717;
   --secondary: #404040;
   --secondary-foreground: #F5F5F5;
   --muted: #525252;
   --muted-foreground: #A3A3A3;
-  --accent: #FDE047; /* Yellow Chalk */
+  --accent: #FDE047;
+  /* Yellow Chalk */
   --accent-foreground: #171717;
-  --destructive: #F87171; /* Red Chalk */
+  --destructive: #F87171;
+  /* Red Chalk */
   --destructive-foreground: #FFFFFF;
   --border: #525252;
   --input: rgba(255, 255, 255, 0.1);
@@ -61,6 +71,30 @@
 @theme {
   --font-sans: 'Roboto', sans-serif;
   --font-hand: 'Patrick Hand', cursive;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 }
 
 @layer base {
@@ -68,16 +102,24 @@
     border-color: var(--border);
     outline-color: rgb(from var(--ring) r g b / 0.5);
   }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
     background-attachment: fixed;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-hand);
     color: var(--primary);
-    font-size: 2.5rem; /* Handwritten fonts often need to be larger */
+    font-size: 2.5rem;
+    /* Handwritten fonts often need to be larger */
     letter-spacing: normal;
   }
 }

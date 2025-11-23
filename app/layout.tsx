@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Patrick_Hand, Roboto } from 'next/font/google' // Removed Space_Mono, added Patrick_Hand
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -28,8 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${patrickHand.variable} font-sans antialiased bg-background text-foreground`}>
-        {children}
-        <Analytics />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

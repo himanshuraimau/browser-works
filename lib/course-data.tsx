@@ -90,6 +90,7 @@ export const courseData: Module[] = [
           'Network Service (Communicator)',
           'GPU Process (Artist)',
         ],
+        animationId: 'browser-architecture',
       },
     ],
   },
