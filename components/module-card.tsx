@@ -56,7 +56,7 @@ export function ModuleCard({ module, progress, onSelect }: ModuleCardProps) {
         {/* Button */}
         <div className="px-6 pb-4">
           <Button
-            className="w-full bg-primary hover:bg-orange-dark text-white font-semibold"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
             onClick={onSelect}
           >
             {isComplete ? 'Review' : progress > 0 ? 'Continue' : 'Start'}

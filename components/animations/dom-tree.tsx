@@ -14,7 +14,7 @@ export function DOMTree() {
 
         {/* Root */}
         <g className="tree-node" style={{ animationDelay: '0s' }}>
-          <rect x="185" y="10" width="130" height="40" rx="4" fill="#ea580c" stroke="#ea580c" strokeWidth="2"/>
+          <rect x="185" y="10" width="130" height="40" rx="4" fill="var(--brand-accent)" stroke="var(--brand-accent)" strokeWidth="2"/>
           <text x="250" y="35" textAnchor="middle" className="text-xs font-semibold" fill="white">&lt;html&gt;</text>
         </g>
 

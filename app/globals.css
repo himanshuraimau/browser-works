@@ -4,80 +4,114 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Primary colors */
-  --cream-50: #fffbf0;
-  --cream: #fef3c7;
-  --orange: #ea580c;
-  --orange-dark: #d84702;
-  
-  /* Neutrals */
-  --white: #ffffff;
-  --gray-100: #f9f7f5;
-  --gray-200: #f0ebe5;
-  --gray-400: #bbb3a8;
-  --gray-600: #6b6359;
-  --gray-900: #1a1410;
-  
-  --background: var(--cream);
-  --foreground: var(--gray-900);
-  --card: var(--white);
-  --card-foreground: var(--gray-900);
-  --popover: var(--white);
-  --popover-foreground: var(--gray-900);
-  --primary: var(--orange);
-  --primary-foreground: var(--white);
-  --secondary: var(--gray-100);
-  --secondary-foreground: var(--gray-900);
-  --muted: var(--gray-200);
-  --muted-foreground: var(--gray-600);
-  --accent: var(--orange);
-  --accent-foreground: var(--white);
-  --border: var(--gray-200);
-  --input: var(--white);
-  --ring: var(--orange);
-  --radius: 0.625rem;
+  /* Brand Colors - Playful Pastel */
+  --brand-bg-start: #C6E7FF;
+  --brand-bg-end: #E5D1FA;
+  --brand-text: #1E1E1E;
+
+  --brand-yellow: #FFD93D;
+  --brand-purple: #A594F9;
+  --brand-pink: #FF9B9B;
+
+  /* Base Mappings */
+  --background: #C6E7FF;
+  /* Fallback */
+  --foreground: var(--brand-text);
+
+  /* UI Colors */
+  --card: rgba(255, 255, 255, 0.6);
+  /* Glassy card */
+  --card-foreground: var(--brand-text);
+
+  --popover: #FFFFFF;
+  --popover-foreground: var(--brand-text);
+
+  --primary: var(--brand-purple);
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #FFFFFF;
+  --secondary-foreground: var(--brand-text);
+
+  --muted: rgba(255, 255, 255, 0.5);
+  --muted-foreground: #666666;
+
+  --accent: var(--brand-yellow);
+  --accent-foreground: #1E1E1E;
+
+  --destructive: var(--brand-pink);
+  --destructive-foreground: #FFFFFF;
+
+  --border: rgba(255, 255, 255, 0.4);
+  --input: rgba(255, 255, 255, 0.6);
+  --ring: var(--brand-purple);
+
+  --radius: 1rem;
+  /* Rounded corners for playful look */
 }
 
 .dark {
-  --background: var(--gray-900);
-  --foreground: var(--cream);
-  --card: var(--gray-900);
-  --card-foreground: var(--cream);
-  --popover: var(--gray-900);
-  --popover-foreground: var(--cream);
-  --primary: var(--orange);
-  --primary-foreground: var(--gray-900);
-  --secondary: var(--gray-600);
-  --secondary-foreground: var(--cream);
-  --muted: var(--gray-600);
-  --muted-foreground: var(--gray-400);
-  --accent: var(--orange);
-  --accent-foreground: var(--gray-900);
-  --border: var(--gray-600);
-  --input: var(--gray-600);
-  --ring: var(--orange);
+  /* Dark Mode - Deep Space theme to complement the pastels */
+  --background: #0F172A;
+  --foreground: #E2E8F0;
+
+  --card: #1E293B;
+  --card-foreground: #E2E8F0;
+
+  --popover: #1E293B;
+  --popover-foreground: #E2E8F0;
+
+  --primary: #A594F9;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #334155;
+  --secondary-foreground: #E2E8F0;
+
+  --muted: #334155;
+  --muted-foreground: #94A3B8;
+
+  --accent: #FFD93D;
+  --accent-foreground: #1E1E1E;
+
+  --destructive: #FF9B9B;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #334155;
+  --input: #334155;
+  --ring: #A594F9;
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-bebas: var(--font-bebas), 'Bebas Neue', sans-serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -88,8 +122,24 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(135deg, var(--brand-bg-start), var(--brand-bg-end));
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bebas tracking-wide text-primary;
   }
 }
 
@@ -98,6 +148,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -108,6 +159,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -119,6 +171,7 @@
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

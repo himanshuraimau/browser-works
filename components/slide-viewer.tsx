@@ -121,7 +121,7 @@ export function SlideViewer({
             </div>
           </>
         )}
-        
+
         <div key={currentSlideIndex} className="min-h-[500px] animate-fade-in">
           <SlideContent slide={currentSlide} />
         </div>
@@ -147,9 +147,8 @@ export function SlideViewer({
                   <button
                     key={i}
                     onClick={() => setCurrentSlideIndex(i)}
-                    className={`flex-1 h-1 rounded-full transition-all ${
-                      i === currentSlideIndex ? 'bg-primary' : 'bg-border hover:bg-muted'
-                    }`}
+                    className={`flex-1 h-1 rounded-full transition-all ${i === currentSlideIndex ? 'bg-primary' : 'bg-border hover:bg-muted'
+                      }`}
                   />
                 ))}
               </div>
@@ -158,7 +157,7 @@ export function SlideViewer({
             <Button
               onClick={() => setCurrentSlideIndex((i) => Math.min(i + 1, slides.length - 1))}
               disabled={isLast}
-              className="gap-2 bg-primary hover:bg-orange-dark text-white"
+              className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               Next
               <ChevronRight className="w-4 h-4" />

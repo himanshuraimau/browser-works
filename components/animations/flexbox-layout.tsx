@@ -28,8 +28,8 @@ export function FlexboxLayout() {
         <text x="170" y="95" textAnchor="middle" className="text-xs" fill="white">3</text>
 
         {/* Main axis */}
-        <line x1="30" y1="165" x2="470" y2="165" stroke="#ea580c" strokeWidth="2" strokeDasharray="5,5"/>
-        <text x="250" y="185" textAnchor="middle" className="text-xs font-semibold" fill="#ea580c">Main Axis (flex-direction: row)</text>
+        <line x1="30" y1="165" x2="470" y2="165" stroke="var(--brand-accent)" strokeWidth="2" strokeDasharray="5,5"/>
+        <text x="250" y="185" textAnchor="middle" className="text-xs font-semibold" fill="var(--brand-accent)">Main Axis (flex-direction: row)</text>
 
         {/* Legend */}
         <text x="30" y="220" className="text-xs" fill="currentColor">Items grow/shrink based on flex-grow, flex-shrink properties</text>

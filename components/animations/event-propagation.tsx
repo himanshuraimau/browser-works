@@ -14,7 +14,7 @@ export function EventPropagation() {
         </defs>
 
         {/* Phase labels */}
-        <text x="50" y="30" className="text-xs font-bold" fill="#ea580c">1. CAPTURE</text>
+        <text x="50" y="30" className="text-xs font-bold" fill="var(--brand-accent)">1. CAPTURE</text>
         <text x="210" y="30" className="text-xs font-bold" fill="#fbbf24">2. TARGET</text>
         <text x="350" y="30" className="text-xs font-bold" fill="#10b981">3. BUBBLE</text>
 
@@ -32,7 +32,7 @@ export function EventPropagation() {
 
         {/* Arrows showing flow */}
         {/* Capture phase - down arrow */}
-        <circle cx="450" cy="60" r="4" fill="#ea580c" className="capture-arrow"/>
+        <circle cx="450" cy="60" r="4" fill="var(--brand-accent)" className="capture-arrow"/>
         
         {/* Bubble phase - up arrow */}
         <circle cx="50" cy="140" r="4" fill="#10b981" className="bubble-arrow"/>

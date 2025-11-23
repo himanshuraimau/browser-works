@@ -23,9 +23,9 @@ export function TCPHandshake() {
 
         {/* Packets with animated movement */}
         <g className="packet" style={{ animationDelay: '0s' }}>
-          <line x1="100" y1="80" x2="380" y2="80" stroke="#ea580c" strokeWidth="2" opacity="0.5"/>
-          <circle cx="110" cy="80" r="4" fill="#ea580c"/>
-          <text x="240" y="70" textAnchor="middle" className="text-xs font-semibold" fill="#ea580c">SYN</text>
+          <line x1="100" y1="80" x2="380" y2="80" stroke="var(--brand-accent)" strokeWidth="2" opacity="0.5"/>
+          <circle cx="110" cy="80" r="4" fill="var(--brand-accent)"/>
+          <text x="240" y="70" textAnchor="middle" className="text-xs font-semibold" fill="var(--brand-accent)">SYN</text>
         </g>
 
         <g className="packet" style={{ animationDelay: '0.7s' }}>
@@ -35,9 +35,9 @@ export function TCPHandshake() {
         </g>
 
         <g className="packet" style={{ animationDelay: '1.4s' }}>
-          <line x1="100" y1="140" x2="380" y2="140" stroke="#ea580c" strokeWidth="2" opacity="0.5"/>
-          <circle cx="110" cy="140" r="4" fill="#ea580c"/>
-          <text x="240" y="155" textAnchor="middle" className="text-xs font-semibold" fill="#ea580c">ACK</text>
+          <line x1="100" y1="140" x2="380" y2="140" stroke="var(--brand-accent)" strokeWidth="2" opacity="0.5"/>
+          <circle cx="110" cy="140" r="4" fill="var(--brand-accent)"/>
+          <text x="240" y="155" textAnchor="middle" className="text-xs font-semibold" fill="var(--brand-accent)">ACK</text>
         </g>
       </svg>
     </div>

@@ -21,8 +21,8 @@ export function StorageAnimation() {
         
         {/* Spinning disk */}
         <g className="spin-disk">
-          <line x1="150" y1="80" x2="110" y2="80" stroke="#ea580c" strokeWidth="3" opacity="0.7"/>
-          <circle cx="108" cy="80" r="3" fill="#ea580c"/>
+          <line x1="150" y1="80" x2="110" y2="80" stroke="var(--brand-accent)" strokeWidth="3" opacity="0.7"/>
+          <circle cx="108" cy="80" r="3" fill="var(--brand-accent)"/>
         </g>
 
         {/* Read/Write arm */}

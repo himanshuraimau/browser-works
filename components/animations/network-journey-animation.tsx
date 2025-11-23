@@ -25,31 +25,31 @@ export function NetworkJourneyAnimation() {
         </defs>
 
         {/* Browser */}
-        <rect x="20" y="50" width="60" height="50" rx="4" fill="#ea580c" opacity="0.15" stroke="#ea580c" strokeWidth="2"/>
+        <rect x="20" y="50" width="60" height="50" rx="4" fill="var(--brand-accent)" opacity="0.15" stroke="var(--brand-accent)" strokeWidth="2" />
         <text x="50" y="80" textAnchor="middle" className="text-xs font-semibold fill-foreground">Browser</text>
 
         {/* DNS Server */}
-        <circle cx="140" cy="30" r="20" fill="#ea580c" opacity="0.15" stroke="#ea580c" strokeWidth="2"/>
+        <circle cx="140" cy="30" r="20" fill="var(--brand-accent)" opacity="0.15" stroke="var(--brand-accent)" strokeWidth="2" />
         <text x="140" y="35" textAnchor="middle" className="text-xs font-semibold fill-foreground">DNS</text>
 
         {/* Pinging circles */}
-        <circle cx="140" cy="30" r="4" fill="#ea580c" className="dns-pulse" style={{ animationDelay: '0s' }}/>
-        <circle cx="140" cy="30" r="4" fill="#ea580c" className="dns-pulse" style={{ animationDelay: '0.5s' }}/>
+        <circle cx="140" cy="30" r="4" fill="var(--brand-accent)" className="dns-pulse" style={{ animationDelay: '0s' }} />
+        <circle cx="140" cy="30" r="4" fill="var(--brand-accent)" className="dns-pulse" style={{ animationDelay: '0.5s' }} />
 
         {/* Packets falling */}
-        <text x="140" y="60" textAnchor="middle" className="text-xs font-semibold fill-orange-dark dns-packet" style={{ animationDelay: '0s' }}>📦</text>
-        <text x="140" y="60" textAnchor="middle" className="text-xs font-semibold fill-orange-dark dns-packet" style={{ animationDelay: '0.4s' }}>📦</text>
+        <text x="140" y="60" textAnchor="middle" className="text-xs font-semibold fill-accent dns-packet" style={{ animationDelay: '0s' }}>📦</text>
+        <text x="140" y="60" textAnchor="middle" className="text-xs font-semibold fill-accent dns-packet" style={{ animationDelay: '0.4s' }}>📦</text>
 
         {/* Web Server */}
-        <rect x="240" y="50" width="60" height="50" rx="4" fill="#ea580c" opacity="0.15" stroke="#ea580c" strokeWidth="2"/>
+        <rect x="240" y="50" width="60" height="50" rx="4" fill="var(--brand-accent)" opacity="0.15" stroke="var(--brand-accent)" strokeWidth="2" />
         <text x="270" y="75" textAnchor="middle" className="text-xs font-semibold fill-foreground">Server</text>
 
         {/* Connecting lines */}
-        <path d="M 80 75 Q 120 50 140 50" stroke="#ea580c" strokeWidth="1.5" fill="none" opacity="0.4" strokeDasharray="4"/>
-        <path d="M 160 75 Q 200 75 240 75" stroke="#ea580c" strokeWidth="1.5" fill="none" opacity="0.4" strokeDasharray="4"/>
+        <path d="M 80 75 Q 120 50 140 50" stroke="var(--brand-accent)" strokeWidth="1.5" fill="none" opacity="0.4" strokeDasharray="4" />
+        <path d="M 160 75 Q 200 75 240 75" stroke="var(--brand-accent)" strokeWidth="1.5" fill="none" opacity="0.4" strokeDasharray="4" />
 
         {/* HTTP Status */}
-        <text x="210" y="120" textAnchor="middle" className="text-xs fill-orange-dark font-medium">HTTP 200 OK</text>
+        <text x="210" y="120" textAnchor="middle" className="text-xs fill-accent font-medium">HTTP 200 OK</text>
       </svg>
     </div>
   )

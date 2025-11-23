@@ -14,15 +14,15 @@ export function EventLoop() {
         </defs>
 
         {/* Main Event Loop Circle */}
-        <circle cx="250" cy="100" r="80" fill="none" stroke="#ea580c" strokeWidth="3" opacity="0.3"/>
+        <circle cx="250" cy="100" r="80" fill="none" stroke="var(--brand-accent)" strokeWidth="3" opacity="0.3"/>
         
         {/* Rotating arrow */}
         <g className="event-loop">
-          <line x1="250" y1="20" x2="250" y2="40" stroke="#ea580c" strokeWidth="3"/>
-          <polygon points="250,45 245,35 255,35" fill="#ea580c"/>
+          <line x1="250" y1="20" x2="250" y2="40" stroke="var(--brand-accent)" strokeWidth="3"/>
+          <polygon points="250,45 245,35 255,35" fill="var(--brand-accent)"/>
         </g>
 
-        <text x="250" y="105" textAnchor="middle" className="text-lg font-bold" fill="#ea580c">Event Loop</text>
+        <text x="250" y="105" textAnchor="middle" className="text-lg font-bold" fill="var(--brand-accent)">Event Loop</text>
 
         {/* Task Queue - Left */}
         <rect x="30" y="30" width="100" height="140" rx="4" fill="#3b82f6" fillOpacity="0.1" stroke="#3b82f6" strokeWidth="2"/>
