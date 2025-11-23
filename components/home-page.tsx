@@ -60,11 +60,11 @@ export function HomePage({ modules, onModuleSelect, progress }: HomePageProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {modules.map((module, index) => (
             <div key={module.id} style={{ animationDelay: `${index * 100}ms` }} className="animate-slide-up">
-              <ModuleCard
-                module={module}
-                progress={progress[module.id] || 0}
-                onSelect={() => onModuleSelect(module.id)}
-              />
+                <ModuleCard
+                  module={module}
+                  progressIndex={progress[module.id]}
+                  onSelect={() => onModuleSelect(module.id)}
+                />
             </div>
           ))}
         </div>
