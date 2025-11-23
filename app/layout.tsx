@@ -10,9 +10,9 @@ const roboto = Roboto({
   variable: '--font-roboto',
 })
 
-const patrickHand = Patrick_Hand({ // New font import
+const patrickHand = Patrick_Hand({
   subsets: ['latin'],
-  weight: ['400'], // Patrick Hand only has 400 weight
+  weight: ['400'], 
   variable: '--font-patrick-hand',
 })
 
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={`${roboto.variable} ${patrickHand.variable} font-sans antialiased bg-background text-foreground`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
