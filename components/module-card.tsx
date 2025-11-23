@@ -5,13 +5,16 @@ import { Button } from '@/components/ui/button'
 
 interface ModuleCardProps {
   module: Module
-  progress: number
+  progressIndex?: number
   onSelect: () => void
 }
 
-export function ModuleCard({ module, progress, onSelect }: ModuleCardProps) {
-  const progressPercent = Math.round(((progress + 1) / module.slides.length) * 100)
-  const isComplete = progress >= module.slides.length - 1
+export function ModuleCard({ module, progressIndex, onSelect }: ModuleCardProps) {
+  const hasProgress = typeof progressIndex === 'number'
+  const visitedSlides = hasProgress ? Math.min(progressIndex + 1, module.slides.length) : 0
+  const progressPercent = Math.round((visitedSlides / module.slides.length) * 100)
+  const isComplete = hasProgress && visitedSlides >= module.slides.length
+  const ctaLabel = isComplete ? 'Review' : hasProgress ? 'Continue' : 'Start'
 
   return (
     <div className="group h-full cursor-pointer" onClick={onSelect}>
@@ -55,13 +58,12 @@ export function ModuleCard({ module, progress, onSelect }: ModuleCardProps) {
 
         {/* Button */}
         <div className="px-6 pb-6 pt-2">
-          <Button
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-3 border-2 border-foreground shadow-md"
-            onClick={onSelect}
-          
-          >
-            {isComplete ? 'Review' : progress > 0 ? 'Continue' : 'Start'}
-          </Button>
+            <Button
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-3 border-2 border-foreground shadow-md"
+              onClick={onSelect}
+            >
+              {ctaLabel}
+            </Button>
         </div>
       </div>  
     </div>

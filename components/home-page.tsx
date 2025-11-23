@@ -60,15 +60,31 @@ export function HomePage({ modules, onModuleSelect, progress }: HomePageProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {modules.map((module, index) => (
             <div key={module.id} style={{ animationDelay: `${index * 100}ms` }} className="animate-slide-up">
-              <ModuleCard
-                module={module}
-                progress={progress[module.id] || 0}
-                onSelect={() => onModuleSelect(module.id)}
-              />
+                <ModuleCard
+                  module={module}
+                  progressIndex={progress[module.id]}
+                  onSelect={() => onModuleSelect(module.id)}
+                />
             </div>
           ))}
         </div>
       </section>
+
+      <footer className="border-t border-border bg-card/80">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+          <p className="text-sm tracking-wide uppercase text-muted-foreground">
+            Made with <span className="text-primary">love</span> by{' '}
+            <a
+              href="https://enghimanshu.space"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-foreground hover:text-primary transition-colors underline decoration-dotted underline-offset-4"
+            >
+              enghimanshu.space
+            </a>
+          </p>
+        </div>
+      </footer>
     </main>
   )
 }
