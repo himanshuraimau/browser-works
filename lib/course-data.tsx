@@ -1,3 +1,5 @@
+import { detailedContent } from './detailed-content'
+
 export interface Slide {
   id: number
   type: 'Title' | 'Content' | 'Diagram' | 'Code' | 'Steps'
@@ -7,6 +9,13 @@ export interface Slide {
   animation?: string
   visuals?: string
   animationId?: string
+  detailedContent?: string
+  keyTerms?: { term: string; definition: string }[]
+}
+
+// Helper function to get detailed content for a slide
+export function getSlideDetails(slideId: number) {
+  return detailedContent[slideId] || {}
 }
 
 export interface Module {
@@ -136,6 +145,7 @@ export const courseData: Module[] = [
           'SYN-ACK: Server says "Yes, let\'s talk."',
           'ACK: Client says "Great, here\'s my first data."',
         ],
+        animationId: 'tcp-handshake',
       },
       {
         id: 12,
@@ -201,6 +211,7 @@ Connection: keep-alive`,
           'HDD: Spinning disks + magnetic read/write arm.',
           'SSD: No moving parts; stores data in flash memory cells using electrical charges.',
         ],
+        animationId: 'storage',
       },
       {
         id: 18,

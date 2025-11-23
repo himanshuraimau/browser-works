@@ -1,17 +1,18 @@
 import type { Metadata } from 'next'
-import { Bebas_Neue, Inter } from 'next/font/google'
+import { Patrick_Hand, Roboto } from 'next/font/google' // Removed Space_Mono, added Patrick_Hand
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const bebasNeue = Bebas_Neue({
+const roboto = Roboto({
   subsets: ['latin'],
-  weight: '400',
-  variable: '--font-bebas',
+  weight: ['400', '700'],
+  variable: '--font-roboto',
 })
 
-const inter = Inter({
+const patrickHand = Patrick_Hand({ // New font import
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['400'], // Patrick Hand only has 400 weight
+  variable: '--font-patrick-hand',
 })
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${bebasNeue.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${roboto.variable} ${patrickHand.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
         <Analytics />
       </body>

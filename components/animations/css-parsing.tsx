@@ -13,8 +13,8 @@ export function CSSParsing() {
 
         {/* CSS Input */}
         <rect x="50" y="10" width="400" height="50" rx="4" fill="var(--brand-bg)" stroke="var(--brand-accent)" strokeWidth="2"/>
-        <text x="250" y="25" textAnchor="middle" className="text-xs font-mono" fill="#1f2937">{"div { color: blue; }"}</text>
-        <text x="250" y="42" textAnchor="middle" className="text-xs font-mono" fill="#1f2937">{"button { padding: 10px; }"}</text>
+        <text x="250" y="25" textAnchor="middle" className="text-xs font-mono" fill="white">{"div { color: blue; }"}</text>
+        <text x="250" y="42" textAnchor="middle" className="text-xs font-mono" fill="white">{"button { padding: 10px; }"}</text>
 
         {/* Arrow down */}
         <line x1="250" y1="60" x2="250" y2="90" stroke="var(--brand-accent)" strokeWidth="2"/>

@@ -21,25 +21,25 @@ export function HomePage({ modules, onModuleSelect, progress }: HomePageProps) {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <header className="border-b-4 border-foreground">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
           <div className="animate-slide-down">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-2">
+            <h1 className="text-5xl sm:text-7xl font-retro text-foreground mb-4">
               How Browsers Work
             </h1>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-xl text-foreground/80 mb-8">
               From your code to pixels on screen. A deep dive into the modern browser.
             </p>
             {/* Overall Progress */}
-            <div className="flex items-center gap-4">
-              <div className="flex-1 max-w-xs">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-full max-w-md">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-foreground">Course Progress</span>
-                  <span className="text-sm font-semibold text-primary">{overallProgress}%</span>
+                  <span className="text-sm font-semibold text-foreground">Course Progress</span>
+                  <span className="text-sm font-bold text-primary">{overallProgress}%</span>
                 </div>
-                <div className="w-full bg-border rounded-full h-2">
+                <div className="w-full bg-border rounded-full h-4 border-2 border-foreground">
                   <div
-                    className="bg-primary h-2 rounded-full transition-all duration-300"
+                    className="bg-primary h-full rounded-full transition-all duration-300"
                     style={{ width: `${overallProgress}%` }}
                   />
                 </div>
@@ -51,7 +51,7 @@ export function HomePage({ modules, onModuleSelect, progress }: HomePageProps) {
 
       {/* Modules Grid */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {modules.map((module, index) => (
             <div key={module.id} style={{ animationDelay: `${index * 100}ms` }} className="animate-slide-up">
               <ModuleCard
